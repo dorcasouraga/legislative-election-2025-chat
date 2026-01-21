@@ -15,35 +15,6 @@ Under the hood:
     - RAG agent for fuzzy lookup & narratives
 6. Display results + charts in a Streamlit UI
 
-# Repository Structure
-
-# Repository Structure
-
-├── data/
-│   ├── raw/                  ← Original CEI PDF
-│   ├── processed/            ← Cleaned CSV / Parquet outputs
-│   └── rag/                  ← Vector embeddings index
-│
-├── src/
-│   ├── ingestion/            ← PDF parsing, normalization, cleaning
-│   ├── db/                   ← DuckDB initialization & data loading
-│   ├── agent/                ← Unified agent (SQL + RAG + clarify + guardrails)
-│   ├── rag/                  ← RAG index builder & retriever
-│   └── app/
-│       └── streamlit_app.py  ← Main Streamlit chat UI
-│
-├── eval/
-│   ├── datasets/             ← Offline eval questions (JSONL)
-│   ├── assertions.py         ← Eval assertions (engine, status, sources, content)
-│   ├── run_eval.py           ← Offline evaluation runner
-│   ├── metrics.py            ← Metrics computation
-│   └── run_metrics.py        ← Metrics CLI
-│
-├── .env.example              ← Environment variables template
-├── requirements.txt          ← Python dependencies
-└── README.md                 ← Project documentation
-
-
 ## 1. Setup Environment
 
 python3 -m venv .venv
@@ -83,7 +54,6 @@ Creates vector embeddings for semantic lookup located in:
 data/rag/rag_index.parquet
 
 ## 6. Launch Web App
-
 
 python -m streamlit run src/app/streamlit_app.py
 
