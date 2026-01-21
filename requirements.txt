@@ -1,0 +1,12 @@
+pdfplumber
+pandas
+pyarrow
+duckdb
+streamlit
+matplotlib
+openai
+python-dotenv
+openpyxl
+tabulate
+langfuse
+duckdb
