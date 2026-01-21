@@ -65,29 +65,3 @@ python eval/run_eval.py
 ## 8.Compute Evaluation Metrics
 python eval/run_metrics.py
 
-# Agent Decision Flow
-
-QUESTION
-│
-├─ malicious ? ─────────────► REFUSED
-│
-├─ out_of_scope ? ───────────► NOT_FOUND
-│
-├─ normalize + tokenize
-│
-├─ fuzzy match against dataset entities
-│
-├─ aggregate ?
-│   ├─ YES → SQL (safe aggregation)
-│   │        └─ validate intent vs result
-│   │
-│   └─ NO
-│
-├─ local / narrative lookup ?
-│   ├─ YES → RAG (entity-filtered)
-│   │        └─ validate answerability
-│
-├─ ambiguous ?
-│   └─ YES → CLARIFY
-│
-└─ NOT_FOUND (fallback)
